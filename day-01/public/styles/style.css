@@ -91,7 +91,7 @@ body {
   .main .image-cards:hover .image-card:first-child {
     flex: 1; }
     .main .image-cards:hover .image-card:first-child .image-card__description {
-      opacity: 1; }
+      opacity: 0; }
     .main .image-cards:hover .image-card:first-child .image-card__description-vertical {
       opacity: 1; }
   .main .image-cards .image-card {
