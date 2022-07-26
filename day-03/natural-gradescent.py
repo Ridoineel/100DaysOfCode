@@ -20,7 +20,7 @@ def predict(X, a, b):
 	return a*X + b
 	
 def main():
-	# the new value is predict
+	# the new value is predicted
 	# according to this X and Y
 	X = np.array([4, 7, 8, 10, 12])
 	Y = np.array([1, 3, 3, 6, 7])
@@ -29,11 +29,10 @@ def main():
 	δ = 0.001
 	n = 1000
 	
-	# initial value of a eand b
+	# initial value of a and b
 	a = 0
 	b = 0
 	
-	# loss progress list
 	loss = []
 	
 	for i in range(n):
