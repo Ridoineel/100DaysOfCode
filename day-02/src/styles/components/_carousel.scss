@@ -1,0 +1,68 @@
+.carousel {
+  &__background-panel {
+    position: relative;
+    height: 100vh;
+    filter: blur(20px);
+    transition: background-image 1000ms ease;
+    transform: scale(1.05);
+  }
+
+  &__cards {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    padding: 100px;
+    overflow: hidden;
+    border: 1px solid black;
+
+    .container {
+      display: flex;
+      height: 60vh;
+      // 1: -25%, 2: -75%...
+      transform: translateX(-75%);
+      transition: transform 300ms ease;
+    }
+
+    .card {
+      position: relative;
+      flex-shrink: 0;
+      width: 50%;
+      border-radius: 20px;
+      transition: transform 300ms ease, opacity 300ms ease;
+      overflow: hidden;
+      opacity: 0.8;
+      cursor: pointer;
+
+      div {
+        position: absolute;
+        bottom: 20px;
+        left: 100px;
+        color: white;
+        font-weight: 700;
+        font-family: monospace;
+        font-size: 1.2rem;
+        z-index: 1;
+      }
+
+      &.active {
+        transform: scale(1.3);
+        opacity: 1;
+        z-index: 2;
+        cursor: auto;
+
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.5872724089635855) 0%, rgba(0, 0, 0, 0) 40%);
+      }
+    }
+  }
+}
