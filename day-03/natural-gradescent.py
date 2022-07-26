@@ -16,12 +16,11 @@ def gradients(X, Y, a, b):
 	
 	return gradEa, gradEb
 	
-
 def predict(X, a, b):
 	return a*X + b
 	
 def main():
-	# the new value is predict 
+	# the new value is predict
 	# according to this X and Y
 	X = np.array([4, 7, 8, 10, 12])
 	Y = np.array([1, 3, 3, 6, 7])
@@ -44,7 +43,6 @@ def main():
 		
 		a = a - δ*gradEa
 		b = b - δ*gradEb
-		
 	
 	print("Learning finished...")
 	print(f"f(x) = {a}x + {b}")
