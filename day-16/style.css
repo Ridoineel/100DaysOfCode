@@ -1,0 +1,50 @@
+:root {
+	--color-box-on: #83cb93;
+	--color-box-off: #ce6a48;
+}
+
+.container {
+	margin: auto;
+	margin-top: 50px;
+	width: 80vw;
+}
+
+.box {
+	margin: auto;
+	width: fit-content;
+	transform-style: preserve-3d;
+}
+
+.box > div {
+	width: 270px;
+	padding: 40px;
+	color: white;
+	text-align: center;
+	transform-style: preserve-3d;
+	transition: transform 300ms ease, 
+				opacity 300ms ease;
+	
+}
+
+.box__on {
+	background-color: var(--color-box-on);
+	transform-origin: center bottom;
+	transform: perspective(300px) rotateX(90deg);
+	opacity: 0;
+}	
+
+.box__off {
+	background-color: var(--color-box-off);
+	color: white;
+	transform-origin: bottom;
+}
+
+.box:hover .box__off {
+	transform: perspective(300px) rotateX(-105deg);
+	opacity: 0;
+}
+
+.box:hover .box__on {
+	transform: perspective(300px) translate3d(0, 100px, 80px) rotateX(0deg);
+	opacity: 1;
+}
