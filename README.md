@@ -24,4 +24,6 @@
 ### Day 08: End of backend implementation with JDBC of the java GUI project
 ### Day 09: End and presentation of the java GUI project (note manager)
 ### Day 10: 1-D Convolution product algorithm
-### Day 11: Digits recognition DL model
+### Day 14: Digits recognition DL model
+### Day 16: 3D BOX
+### Day 17: 2D function prediction
