@@ -26,4 +26,5 @@
 ### Day 10: 1-D Convolution product algorithm
 ### Day 14: Digits recognition DL model
 ### Day 16: 3D BOX
-### Day 17: 2D function prediction
+### Day 17: 2D function prediction (Dl model)
+### Day 18: 3D function prediction (DL model)
