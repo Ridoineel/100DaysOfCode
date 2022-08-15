@@ -10,7 +10,7 @@
 	- DeepLearning
 	- Competitive Programming
 
-	Is all i want to improve
+	Are all i want to improve
 	during this challenge
 
 
@@ -28,3 +28,10 @@
 ### Day 16: 3D BOX
 ### Day 17: 2D function prediction (Dl model)
 ### Day 18: 3D function prediction (DL model)
+### Day 22: 
+	- Convolutional neuron, 
+	- convolutional layer, 
+	- different layers of neural network
+		- Convolution's mask
+		- Pooling
+		- Dropout

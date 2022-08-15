@@ -1,9 +1,40 @@
+#! /usr/bin/env python
+
 import numpy as np
 import matplotlib.pyplot as plt
 
-def convProdSubLists(_list, motf_length):
+def convolve(_list, mask):
+	""" 1D convolution 
+
+	"""
+
 	ln = len(_list)
-	mn = motf_length
+	mn = len(mask)
+	mid_m = mn//2
+
+	new_list = []
+
+	for sub_list in sublists(_list, mn):
+		# reverse mask
+		# don't use mask.reverse() or
+		# mask[::-1] because of speed performance
+		mask_reversed = reversed(mask)
+
+		new_value = sum(a*b for a,b in zip(sub_list, mask_reversed))
+
+		new_list.append(new_value)
+
+
+	return new_list
+
+def sublists(_list, mask_length):
+	""" _list sublist for the product 
+		with motif (length=motf_length)
+
+	"""
+
+	ln = len(_list)
+	mn = mask_length
 	mid_m = mn//2
 
 	for i in range(ln):
@@ -31,27 +62,6 @@ def convProdSubLists(_list, motf_length):
 
 		yield sub_list
 
-
-def convProd(_list, motf):
-	ln = len(_list)
-	mn = len(motf)
-	mid_m = mn//2
-
-	new_list = []
-
-	for sub_list in convProdSubLists(_list, mn):
-		# reverse motf
-		# don't use motf.reverse() or
-		# motf[::-1] because of speed performance
-		motf_reversed = reversed(motf)
-
-		new_value = sum(a*b for a,b in zip(sub_list, motf_reversed))
-
-		new_list.append(new_value)
-
-
-	return new_list
-
 def drawPoints(points_1, points_2):
 	X1 = range(len(points_1))
 	X2 = range(len(points_2))
@@ -74,12 +84,10 @@ def main():
 	# L = [4, 2, 1, 4, 5, 1, 3]
 	# M = np.ones(5)/5
 	
-	new_L = convProd(L, M)
-
-
+	new_L = convolve(L, M)
 
 	print(L, "x", M, "=>", new_L)
-	print(convProd(new_L, M))
+	print(convolve(new_L, M))
 	drawPoints(L, new_L)
 
 if __name__ == '__main__':
